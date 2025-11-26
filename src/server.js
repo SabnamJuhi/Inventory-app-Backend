@@ -26,7 +26,7 @@ app.use("/api/coupons", couponRoutes);
 
     await Coupon.findOrCreate({ where: { code: "ABC" }, defaults: { discount_percent: 10 }});
 
-    app.listen(3001, () => console.log("Server running on 3001"));
+    app.listen(process.env.PORT, () => console.log("Server running on 3001"));
   } catch (err) {
     console.error("DB connect failed:", err);
   }
