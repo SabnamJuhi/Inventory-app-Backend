@@ -1,5 +1,5 @@
 const Invoice = require("../models/Invoice");
-const InvoiceItem = require("../models/invoiceItem");
+const InvoiceItem = require("../models/InvoiceItem");
 const Coupon = require('../models/Coupon')
 
 // Create invoice with items hghghg
