@@ -15,6 +15,8 @@ app.use(express.json());
 app.use("/api/invoices", invoiceRoutes);
 app.use("/api/coupons", couponRoutes);
 
+const PORT = process.env.PORT || 3001;
+
 // sync models and start
 (async () => {
   try {
@@ -26,7 +28,7 @@ app.use("/api/coupons", couponRoutes);
 
     await Coupon.findOrCreate({ where: { code: "ABC" }, defaults: { discount_percent: 10 }});
 
-    app.listen(process.env.PORT, () => console.log("Server running on 3001"));
+    app.listen(PORT, () => console.log("Server running on 3001"));
   } catch (err) {
     console.error("DB connect failed:", err);
   }
