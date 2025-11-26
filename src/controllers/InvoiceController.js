@@ -2,7 +2,7 @@ const Invoice = require("../models/Invoice");
 const InvoiceItem = require("../models/invoiceItem");
 const Coupon = require('../models/Coupon')
 
-// Create invoice with items
+// Create invoice with items hghghg
 exports.createInvoice = async (req, res) => {
   try {
     let { coupon_code, discount_percent, items } = req.body; // items: [{ item_name, quantity, per_unit_price }]
