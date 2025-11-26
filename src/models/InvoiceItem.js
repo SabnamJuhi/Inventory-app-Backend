@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-const sequelize = require("../../db");
+const sequelize = require("../db");
 const Invoice = require("./Invoice");
 
 const InvoiceItem = sequelize.define("InvoiceItem", {

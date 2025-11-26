@@ -2,10 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const sequelize = require("./db");
 
-const Coupon = require("./src/models/Coupon");
+const Coupon = require("./models/Coupon");
 
-const invoiceRoutes = require("./src/routes/invoiceRoutes");
-const couponRoutes = require("./src/routes/couponRoutes");
+const invoiceRoutes = require("./routes/couponRoutes");
+const couponRoutes = require("./routes/couponRoutes");
 
 const app = express();
 app.use(cors());
@@ -21,7 +21,7 @@ app.use("/api/coupons", couponRoutes);
     await sequelize.authenticate();
     console.log("DB connected");
 
-    await sequelize.sync({ alter: true });
+    await sequelize.sync({ force: false })
     console.log("Models synced");
 
     await Coupon.findOrCreate({ where: { code: "ABC" }, defaults: { discount_percent: 10 }});

@@ -1,5 +1,5 @@
 const { DataTypes } = require("sequelize");
-const sequelize = require("../../db");
+const sequelize = require("../db");
 
 const Invoice = sequelize.define("Invoice", {
   coupon_code: { type: DataTypes.STRING, allowNull: true },
