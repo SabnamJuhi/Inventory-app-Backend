@@ -4,7 +4,7 @@ const sequelize = require("./db");
 
 const Coupon = require("./models/Coupon");
 
-const invoiceRoutes = require("./routes/couponRoutes");
+const invoiceRoutes = require("./routes/invoiceRoutes");
 const couponRoutes = require("./routes/couponRoutes");
 
 const app = express();
